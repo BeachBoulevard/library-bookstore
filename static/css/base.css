@@ -1,8 +1,140 @@
-h1 {
-  color: red;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.samplecover {
-  height: 300px;
-  width: auto;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.5;
+}
+ul {
+  list-style:none;
+}
+
+a {
+  color: #3A3835;
+  text-decoration: none;
+}
+
+.body-container{
+  width: 90%;  
+  margin:auto;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  height: ;
+  font-size: 15px;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.header ul{
+display: flex;
+justify-content: center;
+}
+.header .logo{
+  width: 238px;
+  height: 69px ;
+}
+
+.header ul{
+  display: flex;
+}
+.header li{
+  padding: 0 10px;
+}
+
+.showcase, .showcase-category{
+  width: 100%;
+  height: 400px;
+  background: url('./img/') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+}
+
+/*category page*/
+.showcase-category {
+  width: 100%;
+  height: 400px;
+  background: url('./img/') no-repeat center center/cover;
+}
+
+.form-control {
+  margin: 0;
+}
+
+.form-inline{
+  width: 60%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.showcase-category .form-control{
+  margin-bottom: 20px;
+
+}
+.showcase .form-inline {
+  padding-bottom: 20px;
+}
+
+
+.showcase p {
+  padding: 25px;
+  margin: ;
+}
+
+/* results */
+.single-result{
+  width: 70%;
+
+  border-bottom: 3px solid;
+  border-image-source: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66));
+  border-image-slice: 1;
+  position: ;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+  margin: 10px 0px;
+  padding: 10px 0;
+
+}
+
+.resultssection{
+  width: 100%;
+display: grid;
+grid-template-columns: repeat( 1fr);
+grid-gap: 10px;
+margin: 10px 0;
+}
+
+.resultimage img{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+.resultinfo{
+  align-items: center;
+  text-align: left;
+  justify-content: flex-end;
+  margin: 0 50px
+}
+
+button {
+
 }

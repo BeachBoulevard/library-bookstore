@@ -5,14 +5,14 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<h1>Homepage</h1>
-<img class="samplecover" src="{% static 'images/sample.jpg' %}">
-{% if user.is_authenticated %}
-  <p>Hi {{ user.email }}!</p>
-  <p><a href="{% url 'account_logout' %}">Log Out</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <p><a href="{% url 'account_login' %}">Log In</a> |
-     <a href="{% url 'account_signup' %}">Sign Up</a></p>
-{% endif %}
+<div class="showcase">
+  <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
+    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+      aria-label="Search">
+    <i class="fas fa-search" aria-hidden="true"></i>
+  </form>
+
+  <p><a href="{% url 'bycategory' %}">Search by category</a></p>
+</div>
+
 {% endblock content %}
