@@ -16,6 +16,7 @@ class Book(models.Model):
     page_length = models.IntegerField()
     assigned_class = models.CharField(max_length=75)
     subject = models.CharField(max_length=75)
+    cover = models.ImageField(upload_to='covers/', blank=True)
   
     def __str__(self):
         return self.title
