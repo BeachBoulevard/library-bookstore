@@ -14,7 +14,7 @@ class Book(models.Model):
     author = models.CharField(max_length=200)
     isbn = models.IntegerField()
     page_length = models.IntegerField()
-    assigned_class = models.CharField(max_length=75)
+    assigned_class = models.CharField(max_length=75, blank=True)
     subject = models.CharField(max_length=75)
     cover = models.ImageField(upload_to='covers/', blank=True)
   
