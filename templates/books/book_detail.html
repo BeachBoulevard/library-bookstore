@@ -4,14 +4,28 @@
 {% block title %}{{ book.title }}{% endblock title %}
 
 {% block content %}
+<section class="resultssection">
 
-    <div class="book-detail">
+    <div class="single-result">
+
       {% if book.cover %}
-      <img src="{{ book.cover.url }}" alt="{{ book.title }}" class="resultimage">
+        <div class="resultimage">
+          <img src="{{ book.cover.url }}" alt="{{ book.title }}" class="resultimage">
+        </div>
       {% endif %}
-      <h2> <a href="">{{ book.title }}</a> </h2>
-      <p> Author: {{ book.author }}</p>
-      <p> ISBN: {{ book.isbn }}</p>       
+      <div class="resultinfo">
+        <h3> <a href="">{{ book.title }}</a> </h3>
+        <h4> Author: {{ book.author }}</h4>
+        <h5> ISBN: {{ book.isbn }}</h5> 
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium feugiat risus,
+              eu feugiat arcu maximus id. Vivamus augue sapien, sagittis id odio at, porta vehicula tellus. 
+            Aenean a felis justo. Maecenas augue felis, rhoncus eget dictum in, iaculis ut arcu. Nulla facilisi.
+            Nulla metus elit, dapibus non dictum lobortis, pulvinar id arcu....
+        </p>
+        <button type="button" class="btn btn-outline-secondary">Confirm Request</button> 
+      </div>  
     </div>
   
+  </section>
   {% endblock content %}
