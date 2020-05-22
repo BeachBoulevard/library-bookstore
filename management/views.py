@@ -34,7 +34,7 @@ def book_renewal(request, pk):
             book_instance.due_back = form.cleaned_data['renewal_date']
             book_instance.save()
 
-            return HttpResponseRedirect(reverse('/management') )
+            return HttpResponseRedirect(reverse('borrowed_list') )
 
   else:
         proposed_renewal_date = datetime.date.today() + datetime.timedelta(weeks=3)
