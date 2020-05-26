@@ -1,4 +1,5 @@
 {% extends "_base_management.html" %}
+{% load static %}
 
 {% block title %}Management{% endblock title %}
 
@@ -10,7 +11,7 @@
 
       {% for bookinst in borrowed_list %} 
       <li class="{% if bookinst.is_overdue %}text-danger{% endif %}">
-   <!-- -->     <a href="{% url 'book_detail' bookinst.book.pk %}">{{bookinst.book.title}}</a>
+   <!-- -->     <a href="{% url 'management_book_detail' bookinst.book.pk %}">{{bookinst.book.title}}</a>
                  ({{ bookinst.due_back }}) ,
                  ({{ bookinst.borrower.username}})  
                  <a href="{% url 'book_renewal' bookinst.id %}">Renew</a>     

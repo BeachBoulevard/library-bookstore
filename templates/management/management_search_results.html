@@ -1,0 +1,32 @@
+{% extends '_base_management.html' %}
+{% load static %}
+
+{% block title %}Books{% endblock title %}
+
+{% block content %}
+
+<section class="resultssection">
+  {% for book in book_list %}
+    <div class="single-result">
+      <div class="resultimage">
+        <img src="{{ book.cover.url }}" alt="{{ book.title }}">
+        
+      </div>
+
+      <div class="resultinfo">
+        <h3> <a href="{% url 'management_book_detail' book.pk %}">{{book.title}}</a> </h3>
+        <h4>{{ book.author }}</h4>
+        <h5>ISBN: {{ book.isbn }}</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium feugiat risus,
+              eu feugiat arcu maximus id. Vivamus augue sapien, sagittis id odio at, porta vehicula tellus. 
+            Aenean a felis justo. Maecenas augue felis, rhoncus eget dictum in, iaculis ut arcu. Nulla facilisi.
+            Nulla metus elit, dapibus non dictum lobortis, pulvinar id arcu....
+        </p>
+        <button  onclick="location.href= '{% url 'book_update' book.pk %}';" type="button" class="btn btn-outline-secondary">Edit Record</button> 
+        <button  onclick="location.href= '{% url 'book_delete' book.pk %}';" type="button" class="btn btn-outline-secondary">Delete Record</button>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+  {% endblock content %}

@@ -19,19 +19,17 @@
 <body>
   
     <!-- Fixed navbar -->
-
-
     <div class="body-container">
       <div class="header">
         <div class="left-menu">
-          <a href="{% url 'management' %}" ><img src="{% static 'images/logo-iug@2x.png' %}" alt="IU-logo" class="logo"></a>       
+          <a href="{% url 'management_home' %}" ><img src="{% static 'images/logo-iug@2x.png' %}" alt="IU-logo" class="logo"></a>       
         </div>
         
            
         {% if user.is_authenticated %}
         <ul class="right-menu">
           <li><a href="{% url 'borrowed_list' %}">Borrowed</a></li>
-          <li><a href="#">Renewal</a></li>
+          <li><a href="{% url 'book_create' %}">Add a Book</a></li>
           <li><a href="{% url 'account_logout' %}">Logout</a></li>
         </ul>
         {% else %}
