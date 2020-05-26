@@ -28,6 +28,7 @@
            
         {% if user.is_authenticated %}
         <ul class="right-menu">
+          <li><a href="{% url 'book_assign' %}">Assign</a></li>
           <li><a href="{% url 'borrowed_list' %}">Borrowed</a></li>
           <li><a href="{% url 'book_create' %}">Add a Book</a></li>
           <li><a href="{% url 'account_logout' %}">Logout</a></li>

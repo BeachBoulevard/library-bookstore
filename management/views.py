@@ -8,6 +8,7 @@ from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from books.models import Book, Author, BookInstance, Class
+from users.models import CustomUser
 import datetime
 from management.forms import BookRenewalForm
 
@@ -15,6 +16,21 @@ from management.forms import BookRenewalForm
 
 class ManagementHomePageView(TemplateView):
   template_name = 'management/management_home.html'
+
+class UserSearchPageView(TemplateView):
+  template_name = 'management/user_search.html'
+
+class UserSearchResultsListView(ListView):
+  model = BookInstance
+  context_object_name = 'user_list'
+  template_name = 'management/user_search_results.html'
+
+  def get_queryset(self):
+    query = self.request.GET.get('q')
+    return BookInstance.objects.filter(
+      Q(borrower__username__icontains=query)
+    ).order_by('borrower')
+
 
 class ManagementBookListView(ListView):
   model = Book
@@ -83,4 +99,9 @@ class BookUpdate(UpdateView):
 class BookDelete(DeleteView):
     model = Book
     success_url = reverse_lazy('management')
+
+class BookAssignView(CreateView):
+    model = BookInstance
+    fields = '__all__'
+    template_name = 'management/book_assign.html'
 
