@@ -39,7 +39,9 @@ class Book(models.Model):
     isbn = models.CharField('ISBN', max_length=13)
     page_length = models.IntegerField()
     summary = models.TextField(max_length=1000, blank=True)
+    version = models.IntegerField(null=True,blank=True )
     assigned_class = models.ForeignKey(Class, on_delete=models.SET_NULL, null=True,blank=True)
+    quantity=models.IntegerField(default=1,blank=True)
     subject = models.CharField(max_length=75)
     cover = models.ImageField(upload_to='covers/', blank=True)
   
